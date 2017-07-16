@@ -54,4 +54,12 @@ class ProductTest < ActiveSupport::TestCase
     assert_equal :taken, product.errors.details[:title].first[:error]
     assert_equal [I18n.t('errors.messages.taken')], product.errors[:title]
   end
+
+  test 'product title must be at least 10 chars long' do
+    product = new_product(title: 'Short')
+
+    assert product.invalid?
+    assert_equal :too_short, product.errors.details[:title].first[:error]
+    assert_equal [I18n.t('errors.messages.too_short.other', count: 10)], product.errors[:title]
+  end
 end
