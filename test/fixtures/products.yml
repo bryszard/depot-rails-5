@@ -20,3 +20,12 @@ ruby:
     delivered fast, you should add Ruby to your toolbox.
   price: 49.50
   image_url: ruby.png
+
+rspec:
+  title: Testing with RSpec
+  description:
+    Lorem ipsum dolor sit amet, consectetur
+    adipiscing elit. Suspendisse tincidunt risus nibh,
+    quis egestas lectus imperdiet in. Ut quis quam.
+  price: 34.50
+  image_url: rspec.png

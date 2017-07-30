@@ -1,0 +1,9 @@
+$('#cart').html("<%=j render @cart %>");
+
+var animationTime = 1000;
+if ($('#cart tr').length == 2) {
+  $('#cart').slideDown(1000);
+  animationTime = 2000;
+}
+
+$('#current_item').css({'background-color':'#88ff88'}).animate({'background-color':'#114411'}, animationTime)

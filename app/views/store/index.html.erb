@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Your Pragmatic Catalog</h1>
-<% if @counter > 5 %>
+<% if @counter && @counter > 5 %>
   <div>You have seen this page <%= "#{pluralize(@counter, 'time')}" %></div>
 <% end %>
 
@@ -14,7 +14,7 @@
         <%= sanitize(product.description) %>
         <div class="price_line">
           <span class="price"><%= number_to_currency(product.price) %></span>
-          <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+          <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
         </div>
       </div>
     <% end %>
