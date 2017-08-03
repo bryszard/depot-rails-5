@@ -27,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :pay_type %>
-    <%= f.select :pay_type, Order.pay_types.keys, prompt: 'Select a payment method' %>
+    <%= f.label :pay_type_id, 'Payment type' %>
+    <%= f.select :pay_type_id, PayType.all.collect { |p| [p.description, p.id] }, prompt: 'Select a payment method' %>
   </div>
 
   <div class="actions">
